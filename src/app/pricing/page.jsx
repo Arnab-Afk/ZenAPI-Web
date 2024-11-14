@@ -21,17 +21,26 @@ export const metadata = {
 
 const tiers = [
   {
-    name: 'Starter',
-    slug: 'starter',
-    description: 'Everything you need to start selling.',
-    priceMonthly: 99,
+    name: 'Free',
+    slug: 'Free',
+    description: 'Ideal for individual developers and small projects. Start monitoring your APIs with essential features at no cost. No Card Required',
+    priceMonthly: 0,
     href: '#',
     highlights: [
-      { description: 'Up to 3 team members' },
-      { description: 'Up to 5 deal progress boards' },
-      { description: 'Source leads from select platforms' },
-      { description: 'ZenAPI integrations', disabled: true },
-      { description: 'Competitor analysis', disabled: true },
+      { description: 'Real-time performance monitoring (basic metrics)' },
+      { description: 'Response time tracking' },
+      { description: 'API call volume tracking (limited endpoints)' },
+      {description: 'Basic error rate monitoring'},
+      {description: 'Limited usage analytics and endpoint tracking'},
+      {description: 'Basic HTTP/HTTPS request testing'},
+      {description: 'Limited request chaining'},
+      {description: 'Basic rate limit monitoring'},
+      {description: 'Basic authentication monitoring'},
+      {description: 'Auto-generated API documentation (up to 5 APIs)'},
+      {description: 'Mock services for API testing'},
+      { description: 'Geographic performance distribution', disabled: true },
+      { description: 'All HTTP/HTTPS and GraphQL request testing', disabled: true },
+      { description: 'SQL injection, XSS detection, and custom security rules', disabled: true },
     ],
     features: [
       { section: 'Features', name: 'Accounts', value: 3 },
@@ -49,17 +58,27 @@ const tiers = [
     ],
   },
   {
-    name: 'Growth',
-    slug: 'growth',
-    description: 'All the extras for your growing team.',
-    priceMonthly: 149,
+    name: 'Professional',
+    slug: 'Professional',
+    description: 'For small to medium teams looking to scale API usage, improve reliability, and optimize performance.',
+    priceMonthly: 17,
     href: '#',
     highlights: [
-      { description: 'Up to 10 team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 50 verified platforms' },
-      { description: 'ZenAPI integrations' },
-      { description: '5 competitor analyses per month' },
+      { description: 'All basic features along with Team of 3' },
+      { description: 'Advanced real-time analytics (response time, throughput, resource utilization)' },
+      { description: 'Geographic performance distribution' },
+      { description: 'Endpoint popularity metrics' },
+      {description: 'All HTTP/HTTPS and GraphQL request testing'},
+      {description: 'Load and security testing'},
+      {description: 'Test automation and scheduling'},
+      {description: 'CI/CD integration'},
+      {description: 'Role-based access control'},
+      {description: 'Advanced rate limit monitoring and breach detection'},
+      {description: 'Versioned documentation (up to 50 APIs)'},
+      {description: 'Advanced mock services with scenario simulation'},
+      { description: 'SQL injection, XSS detection, and custom security rules', disabled: true },
+      { description: 'Full suite of third-party integrations (CI/CD, issue tracking, cloud platforms)', disabled: true },
+      { description: 'Team chat integration, comment system, and @mentions', disabled: true },
     ],
     features: [
       { section: 'Features', name: 'Accounts', value: 10 },
@@ -79,15 +98,25 @@ const tiers = [
   {
     name: 'Enterprise',
     slug: 'enterprise',
-    description: 'Added flexibility to close deals at scale.',
-    priceMonthly: 299,
+    description: 'Best suited for large teams and organizations that need enhanced security, in-depth analytics, and dedicated support.',
+    priceMonthly: 49,
     href: '#',
     highlights: [
-      { description: 'Unlimited active team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 100 verified platforms' },
-      { description: 'ZenAPI integrations' },
-      { description: 'Unlimited competitor analyses' },
+      { description: 'All basic + Professional features' },
+      { description: 'Unlimited real-time analytics (customizable metrics, trends, forecasting)' },
+      { description: 'Bandwidth usage analysis and cost forecasting' },
+      { description: 'Complete testing capabilities (HTTP/HTTPS, GraphQL, WebSocket, gRPC)' },
+      {description: 'Performance, security, load, and contract testing'},
+      {description: 'Auto-test generation and edge case detection'},
+      {description: 'Collection versioning, rollback capability, and merge conflict resolution'},
+      {description: 'AI-driven anomaly and trend detection'},
+      {description: 'Full role-based access control and permission management'},
+      {description: 'IP whitelisting and custom rate limit settings'},
+      {description: 'Auto-generated documentation with unlimited API support'},
+      {description: 'Environment management with configuration versioning and quick switching'},
+      { description: 'SQL injection, XSS detection, and custom security rules' },
+      { description: 'Full suite of third-party integrations (CI/CD, issue tracking, cloud platforms)' },
+      { description: 'Team chat integration, comment system, and @mentions'},
     ],
     features: [
       { section: 'Features', name: 'Accounts', value: 'Unlimited' },
@@ -151,11 +180,11 @@ function PricingCard({ tier }) {
             </div>
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Start a free trial</Button>
+            <Button href={tier.href}>Get Started </Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
-              Start selling with:
+              Features provided with this plan:
             </h3>
             <ul className="mt-3 space-y-3">
               {tier.highlights.map((props, featureIndex) => (
